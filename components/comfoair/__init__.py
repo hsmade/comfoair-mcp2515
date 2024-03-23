@@ -10,6 +10,7 @@ from enum import Enum
 
 AUTO_LOAD = ["text_sensor", "binary_sensor", "sensor"]
 MULTI_CONF = True
+IS_PLATFORM_COMPONENT = True
 
 CONF_HUB_ID = 'comfoair'
 
@@ -128,8 +129,8 @@ GEN_TEXTSENSORS_SCHEMA = {
 CONFIG_SCHEMA = cv.All(
     cv.Schema({
         cv.GenerateID(): cv.declare_id(Comfoair),
-        cv.Optional(CONF_RX_PIN, default=21): pins.internal_gpio_input_pin_number,
-        cv.Optional(CONF_TX_PIN, default=25): pins.internal_gpio_output_pin_number,
+        # cv.Optional(CONF_RX_PIN, default=21): pins.internal_gpio_input_pin_number,
+        # cv.Optional(CONF_TX_PIN, default=25): pins.internal_gpio_output_pin_number,
     })
     .extend(GEN_SENSORS_SCHEMA)
     .extend(GEN_TEXTSENSORS_SCHEMA)
